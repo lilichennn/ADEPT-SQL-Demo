@@ -12,9 +12,10 @@ def readjson(file):
     with open("./backend/"+file, 'r') as openfile:
         json_object = json.load(openfile)
     return(json_object)
+
 #################### PAGE START ######################
 st.set_page_config(layout="wide")
-st.logo("logo.png", size = 'large')
+st.logo("logobar.png",icon_image= 'logonew.png', size = 'large')
 
 
 # side bar setting

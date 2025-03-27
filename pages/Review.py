@@ -8,7 +8,8 @@ import pandas as pd
 
 st.title('Review Your Settings~')
 
-st.logo("logo.png", size = 'large')
+st.logo("logobar.png",icon_image= 'logonew.png', size = 'large'
+        )
 
 st.header('Database Meta')
 df = pd.read_csv('./backend/dbmata.csv', index_col=0)

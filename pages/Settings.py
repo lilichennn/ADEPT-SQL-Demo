@@ -3,7 +3,7 @@ pythonon_path = os.path.dirname('../')
 sys.path.append(pythonon_path)
 
 from call_llm import callLLM
-from call_emb import callm3e
+from call_emb import callm3e, vectorize_localmodel
 from opDB import localsqlite
 
 import streamlit as st
@@ -22,7 +22,7 @@ def readjson(file):
     return(json_object)
 #################### PAGE START ######################
 st.title("Define your Assistant ~")
-st.logo("logo.png", size = 'large')
+st.logo("logobar.png",icon_image= 'logonew.png', size = 'large')
 
 
 # side bar setting
@@ -53,9 +53,9 @@ with tabllm:
         ss.llm = {}
         ss.llm['active'] = False
 
-    ss.llm['name'] = st.text_input("Model Name")
-    ss.llm['url'] = st.text_input("URL")
-    ss.llm['token'] = st.text_input("API Key")
+    ss.llm['name'] = st.text_input("Model Name", value='')
+    ss.llm['url'] = st.text_input("URL", value='')
+    ss.llm['token'] = st.text_input("API Key", value='')
     #ss.llm['active'] = False
 
     if st.button("Connect", icon=":material/mood:"):
@@ -91,16 +91,20 @@ with tabllm:
     if "emb" not in ss : 
         ss.emb = {}
         ss.emb['active'] = False
-    ss.emb['name'] = st.text_input("Model Name",key='emb1')
-    ss.emb['url'] = st.text_input("URL",key='emb2')
-    ss.emb['token'] = st.text_input("API Key",key='emb3')
+    ss.emb['name'] = st.text_input("Model Name",key='emb1', value='local model')
+    ss.emb['url'] = st.text_input("URL",key='emb2', value='local model')
+    ss.emb['token'] = st.text_input("API Key",key='emb3', value='local model')
     #ss.llm['active'] = False
 
     if st.button("Connect", icon=":material/mood:", key='butforemb'):
 
         if ss.emb['name'] != '' and ss.emb['url'] != '' and ss.emb['token'] != '':
 
-            res = callm3e(ss.emb).init_prompt('TestText').call()  ###### why no para?????
+            if ss.emb['name'] != 'local model':
+
+                res = callm3e(ss.emb).init_prompt('TestText').call()  ###### why no para?????
+            else:
+                res = vectorize_localmodel('TestText')
 
             if res == 'Emb Fail':
                 st.error("Connection FAIL, please check the form")
@@ -335,7 +339,10 @@ with tabsql:
     )
     if st.button('Save', key='qssave'):
 
-        embmodel = callm3e(ss.emb)
+        if ss.emb['name'] != 'local model':
+            embmodel = callm3e(ss.emb)
+        else:
+            embmodel = 'localmodel'
 
         qs_df = edited_df.dropna()
         qs_df_4csv = pd.DataFrame(columns = ['question','qmask','qvec','sql'])
@@ -344,7 +351,10 @@ with tabsql:
             q = qs_df.iloc[i]['Question']
             qmask = qs_df.iloc[i]['Masked Question']
             sql = qs_df.iloc[i]['SQL']
-            qvec = embmodel.init_prompt(qmask).call()
+            if embmodel != 'localmodel':
+                qvec = embmodel.init_prompt(qmask).call()
+            else: 
+                qvec = vectorize_localmodel(qmask)
 
             qs_df_4csv = pd.concat([qs_df_4csv,
                                     pd.DataFrame({
