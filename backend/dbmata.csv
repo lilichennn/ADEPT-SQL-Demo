@@ -1,8 +1,8 @@
 ,Table,Table Description,Column,Column Description
-0,Bookings,the stores' booking info for customers,Booking_ID,id
-1,Bookings,,Customer_ID,cus id
+0,Bookings,the stores' booking info for customers,Booking_ID,booking id
+1,Bookings,,Customer_ID,customer id
 2,Bookings,,Store_ID,store id
-3,Customers,customers individaul info,Customer_ID,cus id
-4,Customers,,Customer_Name,cus name
+3,Customers,customers individaul info,Customer_ID,customer id
+4,Customers,,Customer_Name,customer name
 5,Stores,stores info,Store_ID,store id
 6,Stores,,Store_Name,store name
