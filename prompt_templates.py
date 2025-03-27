@@ -175,8 +175,9 @@ You completed a Text2SQL task through the following steps:
     - execute the SQL you write, and get the data.
 
 #Limitations#
-1. Give appropriate explainations about the structure of the SQL statement
-2. Keep the word count to 50 words or less
+1. Give appropriate summary about the structure of the SQL statement
+3. Must Give the answer to the user question.
+2. Keep the word count to 40 words or less
 
 Now, summary the following WorkingFlow to your user:
 #Task WorkingFlow#

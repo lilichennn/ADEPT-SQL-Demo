@@ -108,5 +108,5 @@ if __name__ == "__main__":
     emb = {"name":"m3e-base-local","url":"http://10.29.253.101:19997/v1/embeddings","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlcyI6WyJhZG1pbiJdLCJleHAiOjE3MjEyNzA0NDZ9.mT-Ky0xt_Dw1s2MhyzNuMkgl4dJe_eH3d2PZ7FXgKR8"}
     db = {"option":"Turtorial DB","sqlite_path":"./sqlite/cre_Drama_Workshop_Groups.sqlite","db_name":"cre_Drama_Workshop_Groups.sqlite"}
 
-    user_input = 'Did Blake book Adan Dinning?'
+    user_input = 'Did Ephraim book Lur Photo?'
     adept(user_input, llm, emb, db)

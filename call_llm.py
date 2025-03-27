@@ -55,6 +55,14 @@ if __name__ == '__main__':
     llmapi = {'url': 'http://10.29.253.101:19997/v1/chat/completions', 
               'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlcyI6WyJhZG1pbiJdLCJleHAiOjE3MjEyNzA0NDZ9.mT-Ky0xt_Dw1s2MhyzNuMkgl4dJe_eH3d2PZ7FXgKR8', 
               'name': 'qwen2-7b-instruct-local'}
+    #open router
+    llmapi = {'url': 'https://openrouter.ai/api/v1/chat/completions', 
+              'token': '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', 
+              'name': 'deepseek/deepseek-chat-v3-0324:free'}
     
     res = callLLM(llmapi).init_prompt('you are a text2sql assistant','who are you').call().get_response_content()
     print(type(res),len(res),res)
+
+
+
+# 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

@@ -1,6 +1,6 @@
 
 from user_input_process import user_input_init
-from call_emb import callm3e
+from call_emb import callm3e, vectorize_localmodel
 from typing import Type
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -17,7 +17,11 @@ def similarity(vec1,vec2):
 
 def search_qvec(full_processed_user_input:Type[user_input_init], emb):
 
-    new_vec = callm3e(emb).init_prompt(full_processed_user_input.trans).call() #original question
+    if emb['name'] != 'local model':
+        new_vec = callm3e(emb).init_prompt(full_processed_user_input.trans).call() #original question
+    else:
+        new_vec = vectorize_localmodel(full_processed_user_input.trans)
+
     qvec_df = pd.read_csv(os.path.join('backend/qvec.csv'))
 
     found_df = pd.DataFrame(columns = ['question', 'sql', 'similarity'])

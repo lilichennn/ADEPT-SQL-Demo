@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit import session_state as ss
-st.logo("logo.png", size = 'large')
+st.logo("logobar.png",icon_image= 'logonew.png', size = 'large')
 st.set_page_config(layout="wide")
 #
 st.title('Welcome to ADEPT-SQL!👋')
