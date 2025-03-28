@@ -23,3 +23,6 @@ cd ~/[your path]/ADEPT-SQL-Demo
 ```
 streamlit run Home.py
 ```
+
+## Official version
+https://github.com/lilichennn/ADEPT-SQL
