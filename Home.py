@@ -10,34 +10,35 @@ st.markdown(
 *Welcome for trying out the DEMO version of ADEPT-SQL!*
 
 
-**ADEPT-SQL is designed for High-Complexity Text2SQL tasks, and have been applied for multiple REAL-WORLD INDUSTRY databases.**
+**ADEPT-SQL is designed for High-Complexity Text2SQL tasks, and its official version have been deployed on multiple REAL-WORLD Industry databases.**
 """
 )
 
 st.divider()
-st.header('How to Use')
+st.header('How to Use 📝')
 st.markdown(
 """
-1) Start with the **Settings** page, 
-With the perfect **Settings**, ADEPT-SQL is able to achieve stunning results~
+*IMPORTANT: This is an online demo depolyed based on Github repository.*
 
+*The system requries LLM and Embedding models to run, therefore, to get full experience, PLEASE pull the github and put your models in the correct directory.* 
 
-2) Before enter **StartChat**, make sure you get all these side-bar status:
+1️⃣ Start with the **Settings** page. With the perfect **Settings**, ADEPT-SQL is able to achieve stunning results~
+
+2️⃣ Look into **Review**, to see infomations you justed recorded.
+
+3️⃣ Go to the **Start Chat**, and explore your database! BUT make sure you get all these sidebar status:
+
 """
 )
 
-st.image("sidebar.png",
-         )
-st.markdown(
-"""
-3) Look into **Review**, to see infomations you need for asking questions.
-"""
-)
+st.image("sidebar.png" )
+
 
 st.divider()
 
 st.markdown(
 """
-- Check out [Github](https://github.com/lilichennn/ADEPT-SQL)
-"""
+- To Get the full experience please Check out [Github](https://github.com/lilichennn/ADEPT-SQL-DEMO)
+- Contact [Email](chenyongnan@cnpc.com.cn) 
+""" 
 )

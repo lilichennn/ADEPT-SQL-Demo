@@ -35,11 +35,11 @@ class callm3e():
         return(vector)
 
 def vectorize_localmodel(somestr):
-    
+
     try:
         model = SentenceTransformer("./m3e-base")
         print("INFO: model loaded.")
-        vector = model.encode(somestr, normalize_embeddings=True)
+        vector = list(model.encode(somestr, normalize_embeddings=True))
     
     except:
         vector = 'Emb Fail'
@@ -56,4 +56,5 @@ if __name__ == '__main__':
     # res = callm3e(api).init_prompt('你是谁啊？').call()
     # print(type(res),res)
 
-    vectorize_localmodel('hello')
+    res= vectorize_localmodel('hello')
+    print(type(res),res)
