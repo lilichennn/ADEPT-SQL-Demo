@@ -2,7 +2,7 @@
 
 ## Quik Start:
 
--  Download M3E from https://huggingface.co/moka-ai/m3e-base/tree/main and put model file in \m3e
+-  Download M3E from https://huggingface.co/moka-ai/m3e-base/tree/main and put model file in /m3e-base
 
 -  create a new Python3.9 environment:
 ```
