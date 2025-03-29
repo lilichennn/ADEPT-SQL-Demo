@@ -1,5 +1,11 @@
 # ADEPT-SQL-Demo
 
+## Method Structure
+
+
+![fig1](https://github.com/user-attachments/assets/a49361d2-79e8-4281-ab2a-704fd294b1f9)
+
+
 ## Quik Start:
 
 -  Download M3E from https://huggingface.co/moka-ai/m3e-base/tree/main and put all model files in /m3e-base
