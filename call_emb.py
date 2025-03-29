@@ -49,11 +49,11 @@ def vectorize_localmodel(somestr):
 
 if __name__ == '__main__':
 
-    # api = {'url': 'http://10.29.253.101:19997/v1/embeddings', 
-    #           'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlcyI6WyJhZG1pbiJdLCJleHAiOjE3MjEyNzA0NDZ9.mT-Ky0xt_Dw1s2MhyzNuMkgl4dJe_eH3d2PZ7FXgKR8', 
+    # api = {'url': '', 
+    #           'token': '', 
     #           'name': 'm3e-base-local'}
     
-    # res = callm3e(api).init_prompt('你是谁啊？').call()
+    # res = callm3e(api).init_prompt('some example text').call()
     # print(type(res),res)
 
     res= vectorize_localmodel('hello')
